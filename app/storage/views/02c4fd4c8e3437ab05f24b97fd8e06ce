@@ -1,0 +1,287 @@
+<?php $__env->startSection('content'); ?>
+<div class="row">
+	<div class="col-lg-12">
+		<?php echo HTML::image('/assets/images/wikarkd.jpg','wika', array('width' => '180', 'height' => '100', 'align' => 'right')); ?>
+
+		<h1 class="page-header">
+			Halaman
+			<small>Proyek</small>
+		</h1>
+		<ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i> Cash In
+            </li>
+        </ol>
+    <button class="btn pull-right" onclick='window.location.reload(true);'>
+      <i class="fa fa-refresh"></i> Reload Page
+    </button>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<h3 class="sub-header">Realisasi Anggaran Cash In <?php echo $year; ?> (Dalam jutaan)</h3>
+          <div class="table-responsive">
+            <?php echo Form::open(array('action' => 'AnggaranController@selesai')); ?>
+
+			<table class="table table-bordered">
+				<tr style="font-weight:bold; text-align:center;">
+					<td rowspan="2">SPK</td>
+					<td rowspan="2">Uraian</td>
+					<td rowspan="2">RKP</td>
+					<td rowspan="2">Ri Tahun <?php echo $year-1; ?></td>
+					<td rowspan="2">Jumlah Tahun <?php echo $year; ?></td>
+					<td colspan="12">Tahun <?php echo $year; ?></td>
+					<td rowspan="2">Ra Tahun <?php echo $year+1; ?></td>
+					<td rowspan="2">Total S/D Selesai</td>
+				</tr>
+				<tr style="font-weight:bold; text-align:center;">
+					<td>Jan</td>
+					<td>Feb</td>
+					<td>Mar</td>
+					<td>Apr</td>
+					<td>Mei</td>
+					<td>Jun</td>
+					<td>Jul</td>
+					<td>Agt</td>
+					<td>Sep</td>
+					<td>Okt</td>
+					<td>Nop</td>
+					<td>Des</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Type Proyek = <?php if ($cashin->proyek->type_proyek == 0) {
+						echo "Proyek Baru";
+					} else {
+						echo "Proyek Lama";
+						} ?>
+					</td>
+					<td colspan="16"></td>
+				</tr>
+				<tr>
+					<td><?php echo $cashin->proyek->spk; ?></td>
+					<td><?php echo $cashin->proyek->nm_proyek; ?></td>
+					<td>
+						<span class="cashin_rkp" data-type="text" data-pk="<?php echo $cashin->id; ?>" data-url="<?php echo url('admin/proyek/cashin/update'); ?>" data-title="Enter Value" data-name='proyeksi'>
+                    		<?php echo $cashin->proyeksi; ?>
+
+            			</span>
+            		</td>
+            		<td>
+            			<span class="cashin_sblum">
+            				<?php echo number_format($proyeksi_sbelum); ?>
+
+            			</span>
+            		</td>
+            		<td>
+            			<span class="cashin_th">
+            				<?php echo number_format($jumlah_th); ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_jan" data-type="text" data-pk="<?php echo $jan->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $jan->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_feb" data-type="text" data-pk="<?php echo $feb->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $feb->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_mar" data-type="text" data-pk="<?php echo $mar->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $mar->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_apr" data-type="text" data-pk="<?php echo $apr->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $apr->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_mei" data-type="text" data-pk="<?php echo $mei->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $mei->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_jun" data-type="text" data-pk="<?php echo $jun->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $jun->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_jul" data-type="text" data-pk="<?php echo $jul->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $jul->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_agt" data-type="text" data-pk="<?php echo $agt->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $agt->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_sep" data-type="text" data-pk="<?php echo $sep->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $sep->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_okt" data-type="text" data-pk="<?php echo $okt->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $okt->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_nov" data-type="text" data-pk="<?php echo $nov->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $nov->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span class="cashin_des" data-type="text" data-pk="<?php echo $des->id; ?>" data-url="<?php echo url('admin/proyek/cashind/update'); ?>" data-title="Enter Value" data-name='nilai_cash_in'>
+                    		<?php echo $des->nilai_cash_in; ?>
+
+            			</span>
+            		</td>
+            		<td>
+            			<span class="cashin_ssdah">
+            				<?php echo number_format($proyeksi_ssdah); ?>
+
+            			</span>
+            		</td>
+            		<td>
+            			<span class="cashin_total">
+            				<?php echo number_format($total_proyeksi); ?>
+
+            			</span>
+            		</td>
+				</tr>
+				<tr>
+					
+				</tr>
+				<tr>
+					<td colspan="2">Total</td>
+					<td>
+						<span id="cashin_rkp">
+							<?php echo number_format($cashin->proyeksi); ?>
+
+						</span>
+					</td>
+            		<td>
+            			<span id="cashin_sblum">
+            				<?php echo number_format($proyeksi_sbelum); ?>
+
+            			</span>
+            		</td>
+            		<td>
+            			<span id="cashin_th">
+            				<?php echo number_format($jumlah_th); ?>
+
+            			</span>
+            		</td>
+					<td>
+						<span id="cashin_jan">
+						<?php echo number_format($jan->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_feb">
+						<?php echo number_format($feb->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_mar">
+						<?php echo number_format($mar->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_apr">
+						<?php echo number_format($apr->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_mei">
+						<?php echo number_format($mei->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_jun">
+						<?php echo number_format($jun->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_jul">
+						<?php echo number_format($jul->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_agt">
+						<?php echo number_format($agt->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_sep">
+						<?php echo number_format($sep->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_okt">
+						<?php echo number_format($okt->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_nov">
+						<?php echo number_format($nov->nilai_cash_in); ?>
+
+						</span>
+					</td>
+					<td>
+						<span id="cashin_des">
+						<?php echo number_format($des->nilai_cash_in); ?>
+
+						</span>
+					</td>
+            		<td>
+            			<span id="cashin_ssdah">
+            			<?php echo number_format($proyeksi_ssdah); ?>
+
+	            		</span>
+	            	</td>
+            		<td>
+            			<span id="cashin_total">
+            				<?php echo number_format($total_proyeksi); ?>
+
+            			</span>
+            		</td>
+				</tr>
+				<tr></tr>
+			</table>
+            <?php echo Form::submit('Selesai'); ?>
+
+          	<?php echo Form::close(); ?>
+
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

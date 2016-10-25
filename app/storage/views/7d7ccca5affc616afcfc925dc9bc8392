@@ -1,0 +1,823 @@
+<?php $__env->startSection('content'); ?>
+<div class="row">
+  <div class="col-lg-12">
+    <?php echo HTML::image('/assets/images/wikarkd.jpg','wika', array('width' => '180', 'height' => '100', 'align' => 'right')); ?>
+
+    <h1 class="page-header">
+      Halaman
+      <small>Divisi</small>
+    </h1>
+    <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i> Cash Out
+            </li>
+        </ol>
+        <button class="btn pull-right" onclick='window.location.reload(true);'>
+          <i class="fa fa-refresh"></i> Reload Page
+        </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+              <h3 class="sub-header">Cash Out Bulan <?php setlocale(LC_TIME, 'id_ID'); $monthName = strftime("%B", mktime(0, 0, 0, $month, 1)); echo $monthName; ?> <?php echo $year; ?> (Dalam jutaan)</h3>
+        <div class="table-responsive">
+        <table class="table table-bordered">
+          <tr style="font-weight:bold; text-align:center;">
+            <td rowspan="2">SPK</td>
+            <td rowspan="2">Uraian Biaya</td>
+            <td rowspan="2">Proyeksi Tahun <?php echo $year; ?></td>
+            <td rowspan="2">Ri s/d <?php setlocale(LC_TIME, 'id_ID'); $monthNum = $month - 1; $monthName = strftime("%B", mktime(0, 0, 0, $monthNum, 1)); echo $monthName;?> Tahun <?php echo $year; ?></td>
+            <td colspan="12">Tahun <?php echo $year; ?></td>
+            <td rowspan="2">Total S/D Selesai</td>
+          </tr>
+          <tr style="font-weight:bold; text-align:center;">
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >Jan</td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >Feb</td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >Mar</td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >Apr</td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >Mei</td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >Jun</td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >Jul</td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >Agt</td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >Sep</td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >Okt</td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >Nop</td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >Des</td>
+          </tr>
+          <tr>
+            <td><?php echo $cashoutdiv->div->spk; ?></td>
+            <td><?php echo $cashoutdiv->div->nm_divisi; ?></td>
+            <td colspan="15"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>BIAYA PEMASARAN</td>
+            <td>
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $cashoutdiv->id; ?>" data-url="<?php echo url('admin/divisi/cashoutdiv/update'); ?>" data-title="Enter Value" data-name='pemasaran'>
+                <?php echo $cashoutdiv->pemasaran; ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($pemasaran); ?>
+
+              </span>
+            </td>
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jana->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jana->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $feba->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $feba->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $mara->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $mara->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $apra->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $apra->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $meia->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $meia->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $juna->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $juna->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jula->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jula->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $agta->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $agta->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $sepa->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $sepa->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $okta->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $okta->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $nova->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $nova->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $desa->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $desa->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td>
+              <span>
+                <?php echo number_format($a); ?>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>BIAYA SEKRETARIAT</td>
+            <td>
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $cashoutdiv->id; ?>" data-url="<?php echo url('admin/divisi/cashoutdiv/update'); ?>" data-title="Enter Value" data-name='sekretariat'>
+                <?php echo $cashoutdiv->sekretariat; ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($sekretariat); ?>
+
+              </span>
+            </td>
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $janb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $janb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $febb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $febb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $marb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $marb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $aprb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $aprb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $meib->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $meib->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $junb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $junb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $julb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $julb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $agtb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $agtb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $sepb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $sepb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $oktb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $oktb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $novb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $novb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $desb->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $desb->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td>
+              <span>
+                <?php echo number_format($b); ?>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>BIAYA FASILITAS</td>
+            <td>
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $cashoutdiv->id; ?>" data-url="<?php echo url('admin/divisi/cashoutdiv/update'); ?>" data-title="Enter Value" data-name='fasilitas'>
+                <?php echo $cashoutdiv->fasilitas; ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($fasilitas); ?>
+
+              </span>
+            </td>
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $janc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $janc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $febc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $febc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $marc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $marc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $aprc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $aprc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $meic->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $meic->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $junc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $junc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $julc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $julc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $agtc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $agtc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $sepc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $sepc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $oktc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $oktc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $novc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $novc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $desc->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $desc->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td>
+              <span>
+                <?php echo number_format($c); ?>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>BIAYA PERSONALIA</td>
+            <td>
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $cashoutdiv->id; ?>" data-url="<?php echo url('admin/divisi/cashoutdiv/update'); ?>" data-title="Enter Value" data-name='personalia'>
+                <?php echo $cashoutdiv->personalia; ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($personalia); ?>
+
+              </span>
+            </td>
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jand->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jand->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $febd->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $febd->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $mard->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $mard->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $aprd->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $aprd->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $meid->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $meid->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jund->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jund->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $juld->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $juld->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $agta->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $agta->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $sepd->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $sepd->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $oktd->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $oktd->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $novd->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $novd->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $desd->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $desd->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td>
+              <span>
+                <?php echo number_format($d); ?>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>BIAYA KEUANGAN</td>
+            <td>
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $cashoutdiv->id; ?>" data-url="<?php echo url('admin/divisi/cashoutdiv/update'); ?>" data-title="Enter Value" data-name='keuangan'>
+                <?php echo $cashoutdiv->keuangan; ?>
+
+              </span>
+            </td>
+            <td><?php echo number_format($keuangan); ?></td>
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jane->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jane->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $febe->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $febe->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $mare->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $mare->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $apre->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $apre->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $meie->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $meie->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $june->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $june->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jule->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jule->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $agte->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $agte->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $sepe->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $sepe->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $okte->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $okte->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $nove->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $nove->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $dese->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $dese->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td>
+              <span>
+                <?php echo number_format($e); ?>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>BIAYA KENDARAAN</td>
+            <td>
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $cashoutdiv->id; ?>" data-url="<?php echo url('admin/divisi/cashoutdiv/update'); ?>" data-title="Enter Value" data-name='kendaraan'>
+                          <?php echo $cashoutdiv->kendaraan; ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($kendaraan); ?>
+
+              </span>
+            </td>
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $janf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $janf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $febf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $febf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $marf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $marf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $aprf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $aprf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $meif->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $meif->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $junf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $junf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $julf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $julf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $agtf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $agtf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $sepf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $sepf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $oktf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $oktf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $novf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $novf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $desf->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $desf->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td>
+              <span>
+                <?php echo number_format($f); ?>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>BIAYA UMUM</td>
+            <td>
+              <span class="cashoutdiv" data-type="text" data-pk="<?php echo $cashoutdiv->id; ?>" data-url="<?php echo url('admin/divisi/cashoutdiv/update'); ?>" data-title="Enter Value" data-name='umum'>
+                <?php echo $cashoutdiv->umum; ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($umum); ?>
+
+              </span>
+            </td>
+            <td <?php if ($month == 1) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jang->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jang->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 2) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $febg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $febg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 3) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $marg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $marg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 4) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $aprg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $aprg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 5) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $meig->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $meig->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 6) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $jung->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $jung->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 7) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $julg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $julg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 8) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $agtg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $agtg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 9) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $sepg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $sepg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 10) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $oktg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $oktg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 11) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $novg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $novg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td <?php if ($month == 12) { echo "bgcolor='yellow'"; } ?> >
+              <span class="cashoutddiv" data-type="text" data-pk="<?php echo $desg->id; ?>" data-url="<?php echo url('admin/divisi/cashoutddiv/update'); ?>" data-title="Enter Value" data-name='nilai_cashout'>
+                          <?php echo $desg->nilai_cashout; ?>
+
+                    </span>
+                  </td>
+            <td>
+              <span>
+                <?php echo number_format($g); ?>
+
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">Total</td>
+            <td>
+              <span>
+                <?php echo number_format($ok_netto); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($proyeksi); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($jan); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($feb); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($mar); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($apr); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($mei); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($jun); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($jul); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($agt); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($sep); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($okt); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($nov); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($des); ?>
+
+              </span>
+            </td>
+            <td>
+              <span>
+                <?php echo number_format($a+$b+$c+$d+$e+$f+$g); ?>
+
+              </span>
+            </td>
+          </tr>
+        </table>
+        <!-- errors -->
+        <p style="color: #c0392b"><?php echo $errors->first(); ?></p>
+        <hr>
+        <?php echo Form::open(array('action' => 'DivisiController@selesai', 'files' => true )); ?>
+
+            <?php echo Form::file('document[]', ['multiple'=>true]); ?>
+
+            <?php echo Form::submit('Upload'); ?>          
+            <?php echo Form::hidden('divisi_id', $cashoutdiv->div->id); ?>
+
+            <?php echo Form::hidden('year', $year); ?>
+
+            <?php echo Form::hidden('month', $month); ?>
+
+            <?php echo Form::submit('Submit'); ?>
+
+      <?php echo Form::close(); ?>
+
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

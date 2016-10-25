@@ -1,0 +1,170 @@
+<?php $__env->startSection('content'); ?>
+<div class="row">
+  <div class="col-lg-12">
+    <?php echo HTML::image('/assets/images/wikarkd.jpg','wika', array('width' => '180', 'height' => '100', 'align' => 'right')); ?>
+
+    <h1 class="page-header">
+      Halaman
+      <small>Proyek</small>
+    </h1>
+    <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i> Loan
+            </li>
+        </ol>
+    <button class="btn pull-right" onclick='window.location.reload(true);'>
+      <i class="fa fa-refresh"></i> Reload Page
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <h3 class="sub-header">Permintaan Pinjaman Dana Bulan <?php setlocale(LC_TIME, 'id_ID'); $monthName = strftime("%B", mktime(0, 0, 0, $month, 1)); echo $monthName; //output: May?> <?php echo $year; ?> (Dalam jutaan)</h3>
+          <div class="table-responsive">
+            <?php echo Form::open(array('action' => 'ProyekController@cashin')); ?>
+
+      <table class="table table-bordered">
+        <tr style="font-weight:bold; align:center;">
+          <td rowspan="2" style="min-width:60px;">SPK</td>
+          <td rowspan="2" style="min-width:150px;">Nama Proyek</td>
+          <td rowspan="2" style="min-width:80px;">Cash In</td>
+          <td rowspan="2" style="min-width:50px;">Cash Out</td>
+          <td rowspan="2" style="min-width:50px;">Posisi Surpl/ def Proyek Awal Bulan</td>
+          <td colspan="2" style="min-width:50px;">Pembayaran Cash Di Proyek</td>
+          <td colspan="2" style="min-width:50px;">Pembayaran Via Departemen dan Pusat</td>
+          <td rowspan="2" style="min-width:50px;">Surplus/Defisit Stlh Dropping</td>
+          <td rowspan="2" style="min-width:50px;">Keterangan</td>
+        </tr>
+        <tr style="font-weight:bold; align:center;">
+          <td>Minggu 1/2</td>
+          <td>Minggu 3/4</td>
+          <td>Konvensional</td>
+          <td>Fasilitas Bank</td>
+        </tr>
+        <tr>
+          <td><?php echo $loan->proyek->spk; ?></td>
+          <td><?php echo $loan->proyek->nm_proyek; ?></td>
+          <td>
+            <span class="cash_in" data-type="text" data-pk="<?php echo $loan->id; ?>" data-url="<?php echo url('admin/proyek/loan/update'); ?>" data-title="Enter Value" data-name='cash_in'>
+                        <?php echo $loan->cash_in; ?>
+
+            </span>
+          </td>
+          <td>
+            <span class="cash_out" data-type="text" data-pk="<?php echo $loan->id; ?>" data-url="<?php echo url('admin/proyek/loan/update'); ?>" data-title="Enter Value" data-name='cash_out'>
+                        <?php echo $loan->cash_out; ?>
+
+                      </span>
+                    </td>
+          <td>
+            <span class="surplus">
+              <?php echo number_format($loan->cash_in - $loan->cash_out); ?>
+
+            </span>
+          </td>
+          <td>
+            <span class="loancash_dwi1" data-type="text" data-pk="<?php echo $loan->id; ?>" data-url="<?php echo url('admin/proyek/loan/update'); ?>" data-title="Enter Value" data-name='cash_dwi1'>
+                        <?php echo $loan->cash_dwi1; ?>
+
+                      </span>
+                    </td>
+          <td>
+            <span class="loancash_dwi2" data-type="text" data-pk="<?php echo $loan->id; ?>" data-url="<?php echo url('admin/proyek/loan/update'); ?>" data-title="Enter Value" data-name='cash_dwi2'>
+                        <?php echo $loan->cash_dwi2; ?>
+
+                      </span>
+                    </td>
+          <td>
+            <span class="loan_konvensional" data-type="text" data-pk="<?php echo $loan->id; ?>" data-url="<?php echo url('admin/proyek/loan/update'); ?>" data-title="Enter Value" data-name='cash_konvensional'>
+                        <?php echo $loan->cash_konvensional; ?>
+
+                      </span>
+                    </td>
+          <td>
+            <span class="loan_bank" data-type="text" data-pk="<?php echo $loan->id; ?>" data-url="<?php echo url('admin/proyek/loan/update'); ?>" data-title="Enter Value" data-name='cash_bank'>
+                        <?php echo $loan->cash_bank; ?>
+
+                      </span>
+                    </td>
+          <td>
+            <span class="after_surplus"><?php echo number_format($loan->cash_in - $loan->cash_out - $loan->cash_dwi1 - $loan->cash_dwi2 - $loan->cash_konvensional - $loan->cash_bank + $termin); ?>
+
+            </span>
+          </td>
+          <td>
+            <span class="ket" data-type="text" data-pk="<?php echo $loan->id; ?>" data-url="<?php echo url('admin/proyek/loan/update'); ?>" data-title="Enter Value" data-name='ket'>
+                        <?php echo $loan->ket; ?>
+
+                      </span>
+                    </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">Jumlah</td>
+          <td>
+            <span id="cash_in">
+              <?php echo number_format($loan->cash_in); ?>
+
+            </span>
+          </td>
+          <td>
+            <span id="cash_out">
+              <?php echo number_format($loan->cash_out); ?>
+
+            </span>
+          </td>
+          <td>
+            <span id="surplus">
+              <?php echo number_format($loan->cash_in - $loan->cash_out); ?>
+
+            </span>
+          </td>
+          <td>
+            <span id="loancash_dwi1">
+              <?php echo number_format($loan->cash_dwi1); ?>
+
+            </span>
+          </td>
+          <td>
+            <span id="loancash_dwi2">
+              <?php echo number_format($loan->cash_dwi2); ?>
+
+            </span>
+          </td>
+          <td>
+            <span id="loan_konvensional">
+              <?php echo number_format($loan->cash_konvensional); ?>
+
+            </span>
+          </td>
+          <td>
+            <span id="loan_bank">
+              <?php echo number_format($loan->cash_bank); ?>
+
+            </span>
+          </td>
+          <td>
+            <span id="after_surplus">
+              <?php echo number_format($loan->cash_in - $loan->cash_out - $loan->cash_dwi1 - $loan->cash_dwi2 - $loan->cash_konvensional - $loan->cash_bank + $termin); ?>
+
+            </span>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+            <?php echo Form::hidden('id', $loan->proyek->id); ?>
+
+            <?php echo Form::hidden('year', $year); ?>
+
+            <?php echo Form::hidden('month', $month); ?>
+
+            <?php echo Form::submit('Selanjutnya'); ?>
+
+          <?php echo Form::close(); ?>
+
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

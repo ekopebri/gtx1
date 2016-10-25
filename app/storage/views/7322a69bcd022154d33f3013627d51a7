@@ -1,0 +1,46 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="row">
+	<div class="col-lg-12">
+		<?php echo HTML::image('/assets/images/wikarkd.jpg','wika', array('width' => '180', 'height' => '100', 'align' => 'right')); ?>
+
+		<h1 class="page-header">
+			Halaman
+			<small>Proyek</small>
+		</h1>
+		<ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i> Selesai
+            </li>
+        </ol>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<!-- uploaded -->
+        <?php if(Session::has('done')): ?>
+            <?php foreach(Session::get('done') as $yes): ?>
+                <li><?php echo $yes; ?></li>
+            <?php endforeach; ?>
+            <p style="color: #2ecc71">Uploaded</p>
+            <br>
+        <?php endif; ?>
+
+        <!-- not uploaded -->
+        <?php if(Session::has('not')): ?>
+            <?php foreach(Session::get('not') as $no): ?>
+                <li><?php echo $no; ?></li>
+            <?php endforeach; ?>
+            <p style="color: #c0392b">wasnt uploaded</p>
+            <br>
+        <?php endif; ?>
+		<button class="btn btn-default"><a href="/">Kembali</a></button>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('template/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

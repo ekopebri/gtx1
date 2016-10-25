@@ -1,0 +1,62 @@
+<?php $__env->startSection('content'); ?>
+<div class="row">
+  <div class="col-lg-12">
+    <?php echo HTML::image('/assets/images/wikarkd.jpg','wika', array('width' => '180', 'height' => '100', 'align' => 'right')); ?>
+
+    <h1 class="page-header">
+      Halaman
+      <small>Divisi</small>
+    </h1>
+    <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i> Create Divisi
+            </li>
+        </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <?php if(Session::has('pesan')): ?>
+      <?php echo Session::get('pesan'); ?>
+
+    <?php endif; ?>
+    <h1 class="sub-header">Tambah Divisi</h1>
+      <?php echo Form::open(array('route' => 'storedivisi', 'id' => 'eventForm', 'class' => 'form-horizontal')); ?>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nomor SPK</label>
+        <input class="form-control" name="spk" placeholder="Masukkan Kode SPK">
+        <br>
+        <?php if($errors->has('spk')): ?>
+          <?php echo $errors->first('spk'); ?>
+
+        <?php endif; ?>
+      </div>
+      <div class="form-group">
+        <label>Nama Divisi</label>
+        <input class="form-control" name="nama" placeholder="Masukkan Nama Divisi">
+        <br>
+        <?php if($errors->has('nama')): ?>
+          <?php echo $errors->first('nama'); ?>
+
+        <?php endif; ?>
+      </div>
+      <div class="form-group">
+        <label>Wilayah</label>
+        <input class="form-control" name="wilayah" placeholder="Masukkan wilayah Divisi">
+        <br>
+        <?php if($errors->has('wilayah')): ?>
+          <?php echo $errors->first('wilayah'); ?>
+
+        <?php endif; ?>
+      </div>
+            <button type="submit" class="btn btn-default">Save</button>
+            <?php echo Form::close(); ?>
+
+</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

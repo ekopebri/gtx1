@@ -1,0 +1,94 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="row">
+  <div class="col-lg-12">
+    <?php echo HTML::image('/assets/images/wikarkd.jpg','wika', array('width' => '180', 'height' => '100', 'align' => 'right')); ?>
+
+    <h1 class="page-header">
+      Halaman
+      <small>Konsolidasi</small>
+    </h1>
+    <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i> Termin
+            </li>
+        </ol>
+    <?php echo Form::open(array('action' => 'PrintController@printTermin')); ?>
+
+      <input type="hidden" value="<?php echo $month; ?>" name="month">
+      <input type="hidden" value="<?php echo $year; ?>" name="year">
+      <button class="btn btn-default pull-right"><i class="fa fa-print"></i> Print Page</button>
+    <?php echo Form::close(); ?>
+
+    <?php echo Form::open(array('action' => 'PrintController@saveTermin')); ?>
+
+      <input type="hidden" value="<?php echo $month; ?>" name="month">
+      <input type="hidden" value="<?php echo $year; ?>" name="year">      
+      <button class="btn btn-default pull-right"><i class="fa fa-save"></i> Save Page</button>
+    <?php echo Form::close(); ?>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <h3 class="sub-header">Penerimaan Termin Bulan <?php setlocale(LC_TIME, 'id_ID'); $monthName = strftime("%B", mktime(0, 0, 0, $month, 1)); echo $monthName;
+                ?> <?php echo $year; ?> (Dalam jutaan)</h3>
+          <div class="table-responsive">
+            <?php echo Form::open(array('action' => 'KonsolidasiController@loan')); ?>
+
+            <table class="table table-bordered">
+              <tr style="font-weight:bold; text-align:center;">
+                <td>SPK</td>
+                <td>Nama Proyek</td>
+                <td>Dwi Ming 1/2</td>
+                <td>Dwi Ming 3/4</td>
+                <td>Ri</td>
+                <td>Belum Cair</td>
+                <td>Keterangan</td>
+              </tr>
+              <?php foreach($termin as $data): ?>
+              <tr>
+                <td><?php echo $data->proyek->spk; ?></td>
+                <td><?php echo $data->proyek->nm_proyek; ?></td>
+                <td><?php echo number_format($data->cash_dwi1); ?></td>
+                <td><?php echo number_format($data->cash_dwi2); ?></td>
+                <td><?php echo number_format($data->realisasi); ?></td>
+                <td><?php echo number_format($data->cash_dwi1 + $data->cash_dwi2 - $data->realisasi); ?></td>
+                <td><?php echo $data->ket; ?></td>
+              </tr>
+              <?php endforeach; ?>
+              <?php foreach($noTermin as $data): ?>
+              <tr color="red">
+                <td><font color="red"><?php echo $data->spk; ?></font></td>
+                <td><font color="red"><?php echo $data->nm_proyek; ?></font></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <?php endforeach; ?>
+              <tr>
+                <td colspan="2">Total Termin Konsolidasi</td>
+                <td><?php echo number_format($cash_dwi1); ?></td>
+                <td><?php echo number_format($cash_dwi2); ?></td>
+                <td><?php echo number_format($realisasi); ?></td>
+                <td><?php echo number_format($cash_dwi1 + $cash_dwi2 - $realisasi); ?></td>
+                <td></td>
+              </tr>
+            </table>
+            <?php echo Form::hidden('year', $year); ?>
+
+            <?php echo Form::hidden('month', $month); ?>
+
+            <?php echo Form::submit('Selanjutnya'); ?>
+
+          <?php echo Form::close(); ?>
+
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

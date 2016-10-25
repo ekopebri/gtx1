@@ -1,0 +1,36 @@
+<?php $__env->startSection('content'); ?>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      Halaman
+      <small>Divisi</small>
+    </h1>
+    <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i> Read Divisi
+            </li>
+        </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <h1 class="sub-header">Lihat Divisi</h1>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nomor SPK</label>
+        <input class="form-control" name="spk" value="<?php echo $div->spk; ?>" disabled="disabled">     
+    </div>
+      <div class="form-group">
+        <label>Nama Divisi</label>
+        <input class="form-control" name="nama" value="<?php echo $div->nm_divisi; ?>" disabled="disabled">
+      </div>
+      <div class="form-group">
+        <label>Wilayah</label>
+        <input class="form-control" name="wilayah" value="<?php echo $div->wilayah; ?>" disabled="disabled">
+      </div>
+</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template/master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

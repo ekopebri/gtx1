@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+	<?php echo Form::open(array('url' => 'login')); ?>
+
+		<h1>Login</h1>
+		<p>
+			<?php echo $errors->first('username'); ?>
+
+			<?php echo $errors->first('password'); ?>
+
+		</p>
+
+		<p>
+			<?php echo Form::label('username', 'Username'); ?>
+
+			<?php echo Form::text('username', Input::old('username'), array('placeholder' => 'username')); ?>
+
+		</p>
+
+		<p>
+			<?php echo Form::label('password', 'password'); ?>
+
+			<?php echo Form::password('password'); ?>
+
+		</p>
+
+		<p> <?php echo Form::submit('Login'); ?> </p>
+		
+	<?php echo Form::close(); ?>
+
+</body>
+</html>
