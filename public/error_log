@@ -1,0 +1,30 @@
+[29-Mar-2016 07:30:01 UTC] PHP Warning:  require(/home/rkdonlin/public_html/../framework/bootstrap/autoload.php): failed to open stream: No such file or directory in /home/rkdonlin/public_html/index.php on line 21
+[29-Mar-2016 07:30:01 UTC] PHP Fatal error:  require(): Failed opening required '/home/rkdonlin/public_html/../framework/bootstrap/autoload.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/rkdonlin/public_html/index.php on line 21
+[01-Apr-2016 15:13:47 Asia/Makassar] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2950
+[01-Apr-2016 15:13:54 Asia/Makassar] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2950
+[01-Apr-2016 15:14:27 Asia/Makassar] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2950
+[01-Apr-2016 15:14:30 Asia/Makassar] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/rkdonlin/framework/app/controllers/ProyekController.php on line 2328
+[01-Apr-2016 15:18:43 Asia/Makassar] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2950
+[02-Apr-2016 00:57:55 Asia/Makassar] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2860
+[02-Apr-2016 00:58:37 Asia/Makassar] PHP Parse error:  syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2864
+[02-Apr-2016 00:59:45 Asia/Makassar] PHP Parse error:  syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2864
+[02-Apr-2016 01:01:24 Asia/Makassar] PHP Parse error:  syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2864
+[02-Apr-2016 01:09:42 Asia/Makassar] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2860
+[02-Apr-2016 01:14:33 Asia/Makassar] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2874
+[02-Apr-2016 01:16:34 Asia/Makassar] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2874
+[02-Apr-2016 01:28:22 Asia/Makassar] PHP Parse error:  syntax error, unexpected 'Content' (T_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2934
+[02-Apr-2016 01:29:09 Asia/Makassar] PHP Parse error:  syntax error, unexpected 'Content' (T_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2934
+[02-Apr-2016 01:29:46 Asia/Makassar] PHP Parse error:  syntax error, unexpected 'Content' (T_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2934
+[02-Apr-2016 01:32:29 Asia/Makassar] PHP Parse error:  syntax error, unexpected 'file' (T_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2948
+[02-Apr-2016 01:43:05 Asia/Makassar] PHP Parse error:  syntax error, unexpected 'file' (T_STRING) in /home/rkdonlin/framework/app/controllers/DivisiController.php on line 2948
+[02-Apr-2016 02:46:43 Asia/Makassar] PHP Parse error:  syntax error, unexpected '"-28"' (T_CONSTANT_ENCAPSED_STRING) in /home/rkdonlin/framework/app/controllers/KonsolidasiController.php on line 507
+[11-Apr-2016 02:35:37 Asia/Makassar] PHP Parse error:  syntax error, unexpected '.1' (T_DNUMBER) in /home/rkdonlin/framework/app/storage/views/b3f18e19c6edf8c4c3978a700beff72d on line 495
+[11-Apr-2016 02:37:09 Asia/Makassar] PHP Parse error:  syntax error, unexpected '.1' (T_DNUMBER) in /home/rkdonlin/framework/app/storage/views/b3f18e19c6edf8c4c3978a700beff72d on line 495
+[17-Apr-2016 16:20:54 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
+[17-Apr-2016 16:24:32 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
+[17-Apr-2016 16:25:41 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
+[17-Apr-2016 16:25:51 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
+[17-Apr-2016 16:27:29 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
+[17-Apr-2016 16:27:52 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
+[17-Apr-2016 16:28:44 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
+[17-Apr-2016 16:42:17 Asia/Makassar] PHP Fatal error:  Class 'PDO' not found in /home/rkdonlin/framework/app/config/database.php on line 16
